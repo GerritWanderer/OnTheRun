@@ -36,10 +36,18 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Salesforce REST api
+gem 'restforce', '~> 2.5.3'
+
+# Wrapper for services
+gem 'services', path: 'lib/gems/services'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.7'
+  gem 'vcr', '~> 3.0.3'
+  gem 'webmock', '~> 3.4.0'
 end
 
 group :development do

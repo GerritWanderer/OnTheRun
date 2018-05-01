@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id=3MVG96mGXeuuwTZi1FvcrlwfqoSZ3iMmPlOKZ2g26iR0NL2DRqhDwj4GMWkl1jazNPUN0ax7_6Q7O1UKnT5TB&client_secret=8126221032253474441&username=info%40on-running.com.uat2&password=PpjR9mhmNTQjwLjUkvauhBYVcheLTuhNvGnLNc0ZzODSvRNXq
+    headers:
+      User-Agent:
+      - Faraday v0.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 01 May 2018 12:07:36 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Cache-Control:
+      - no-cache,must-revalidate,max-age=0,no-store,private
+      Set-Cookie:
+      - BrowserId=wKTAHVTzTiu-gf9uZbXD7w;Path=/;Domain=.salesforce.com;Expires=Sat,
+        30-Jun-2018 12:07:36 GMT;Max-Age=5184000
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"00D5E0000004buq!AQgAQKWa_cLB6_v327F4quhPPQ.om5GDcae5Rqsau6elcwVAy07I0BUygyVLCbh9vkUiQRcNnQz_cPUclB0JTdstiNuhyxoi","instance_url":"https://cs84.salesforce.com","id":"https://test.salesforce.com/id/00D5E0000004buqUAA/005D0000002BQ7NIAW","token_type":"Bearer","issued_at":"1525176456480","signature":"Vovclfl8wAqd8lAwpLAjgl1Byg6crLfE2cXqIhxvWxA="}'
+    http_version: 
+  recorded_at: Tue, 01 May 2018 12:07:36 GMT
+- request:
+    method: get
+    uri: https://cs84.salesforce.com/services/data/v41.0/queryAll?q=select%20Id%20from%20Account%0A%20%20%20%20%20%20%20%20where%20E_Shop_Dealer__c%20=%20%27Dealer%20and%20Point%20of%20Sale%27%20and%20isDeleted%20=%20true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.0
+      Authorization:
+      - OAuth 00D5E0000004buq!AQgAQKWa_cLB6_v327F4quhPPQ.om5GDcae5Rqsau6elcwVAy07I0BUygyVLCbh9vkUiQRcNnQz_cPUclB0JTdstiNuhyxoi
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 01 May 2018 12:07:36 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      X-Robots-Tag:
+      - none
+      Cache-Control:
+      - no-cache,must-revalidate,max-age=0,no-store,private
+      Set-Cookie:
+      - BrowserId=6Bg94aA6RgOaInDWsrFsGQ;Path=/;Domain=.salesforce.com;Expires=Sat,
+        30-Jun-2018 12:07:36 GMT;Max-Age=5184000
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Sforce-Limit-Info:
+      - api-usage=84/5000000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalSize":0,"done":true,"records":[]}'
+    http_version: 
+  recorded_at: Tue, 01 May 2018 12:07:36 GMT
+recorded_with: VCR 3.0.3

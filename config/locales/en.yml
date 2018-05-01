@@ -30,4 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    salesforce_connection_error: "Couldn't establish a connection to salesforce"
+    salesforce_data_error: "Couldn't store a salesforce account"
   hello: "Hello world"
