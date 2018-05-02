@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import DealersList from "./List"
-import DealersMap from "./Map"
+import PropTypes from 'prop-types'
+import React from 'react'
+import DealersList from './List'
+import DealersMap from './Map'
 
 export class Dealers extends React.Component {
   static propTypes = {

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types'
+import React from 'react'
 
 export class DealersList extends React.Component {
   static propTypes = {
@@ -11,14 +11,21 @@ export class DealersList extends React.Component {
   handleDealerClick = (dealerId, event) => this.props.onDealerClick(dealerId)
 
   render() {
-    const { dealers, onDealerClick, highlightedDealerId } = this.props
+    const { dealers, highlightedDealerId } = this.props
     return (
       <div>
         <h3>Dealers</h3>
         <ul>
-          {dealers.map((dealer, index) =>
-            <li key={`dealerList${index}`} onClick={this.handleDealerClick.bind(this, dealer.id)}>{dealer.name}</li>
-          )}
+          {dealers.map((dealer, index) => {
+            const className = dealer.id == highlightedDealerId ? 'highlighted' : null
+            return (<li
+              key={`dealerList${index}`}
+              onClick={this.handleDealerClick.bind(this, dealer.id)}
+              className={className}
+            >
+              {dealer.name}
+            </li>)
+          })}
         </ul>
       </div>
     );

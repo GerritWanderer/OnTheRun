@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import GoogleMapReact from 'google-map-react';
+import PropTypes from 'prop-types'
+import React from 'react'
+import GoogleMapReact from 'google-map-react'
+import IconMarkerActive from 'images/icons/maps/marker-active.png'
+import IconMarkerInactive from 'images/icons/maps/marker-inactive.png'
 
 export class DealersMap extends React.Component {
   static propTypes = {
@@ -20,8 +22,8 @@ export class DealersMap extends React.Component {
   handleDealerClick = (key, props) => this.props.onDealerClick(props.dealerId)
 
   render() {
-    const DefaultMarker = ({ text }) => <div>{text}</div>
-    const HighlightedMarker = ({ text }) => <div>{text}</div>
+    const DefaultMarker = () => <img src={IconMarkerInactive} />
+    const HighlightedMarker = () => <img src={IconMarkerActive} />
     const { dealers, highlightedDealerId, center, zoom } = this.props
     return (
       <div style={{ height: '400px', width: '100%' }}>
@@ -34,7 +36,6 @@ export class DealersMap extends React.Component {
           {dealers.map((dealer, index) => {
             const markerProps = {
               key: `dealerMap${index}`,
-              text: dealer.name,
               dealerId: dealer.id,
               lat: parseFloat(dealer.lat),
               lng: parseFloat(dealer.lon)
