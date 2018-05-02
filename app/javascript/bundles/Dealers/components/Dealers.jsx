@@ -25,9 +25,13 @@ export class Dealers extends React.Component {
     }
 
     return (
-      <div>
-        <DealersList {...dealerProps} />
-        <DealersMap {...dealerProps} />
+      <div className='dealersContainer'>
+        <div className='dealersMap'>
+          <DealersMap {...dealerProps} />
+        </div>
+        <div className='dealersList'>
+          <DealersList {...dealerProps} />
+        </div>
       </div>
     );
   }

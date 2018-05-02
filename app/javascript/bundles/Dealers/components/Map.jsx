@@ -26,7 +26,7 @@ export class DealersMap extends React.Component {
     const HighlightedMarker = () => <img src={IconMarkerActive} />
     const { dealers, highlightedDealerId, center, zoom } = this.props
     return (
-      <div style={{ height: '400px', width: '100%' }}>
+      <div className={'dealersMapContainer'}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyA_5kOuj--dAHdcjJv3GLPOqnhkGPzMuTM' }}
           defaultCenter={this.props.center}

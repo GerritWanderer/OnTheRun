@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import classNames from 'classnames'
 
 export class DealersList extends React.Component {
   static propTypes = {
@@ -14,18 +15,14 @@ export class DealersList extends React.Component {
     const { dealers, highlightedDealerId } = this.props
     return (
       <div>
-        <h3>Dealers</h3>
-        <ul>
-          {dealers.map((dealer, index) => {
-            const className = dealer.id == highlightedDealerId ? 'highlighted' : null
-            return (<li
+        <ul className='list-group'>
+          {dealers.map((dealer, index) => <li
               key={`dealerList${index}`}
               onClick={this.handleDealerClick.bind(this, dealer.id)}
-              className={className}
-            >
+              className={classNames('list-group-item', {'active': dealer.id == highlightedDealerId})}>
               {dealer.name}
-            </li>)
-          })}
+            </li>
+          )}
         </ul>
       </div>
     );
