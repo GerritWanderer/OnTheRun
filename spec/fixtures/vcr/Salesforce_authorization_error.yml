@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id=3MVG96mGXeuuwTZi1FvcrlwfqoSZ3iMmPlOKZ2g26iR0NL2DRqhDwj4GMWkl1jazNPUN0ax7_6Q7O1UKnT5TB&client_secret=8126221032253474441&username=info%40on-runninag.com.uat2&password=PpjR9mhmNTQjwLjUkvauhBYVcheLTuhNvGnLNc0ZzODSvRNXq
+    headers:
+      User-Agent:
+      - Faraday v0.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 02 May 2018 19:22:46 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Cache-Control:
+      - no-cache,must-revalidate,max-age=0,no-store,private
+      Set-Cookie:
+      - BrowserId=Nb2vW-roQvKYMCALwsT62Q;Path=/;Domain=.salesforce.com;Expires=Sun,
+        01-Jul-2018 19:22:46 GMT;Max-Age=5184000
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_grant","error_description":"authentication failure"}'
+    http_version: 
+  recorded_at: Wed, 02 May 2018 19:22:46 GMT
+recorded_with: VCR 3.0.3

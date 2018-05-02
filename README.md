@@ -1,24 +1,20 @@
-# README
+# On Running <> Salesforce Use Case
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup:
 
-Things you may want to cover:
+* Clone or download repo.
+* Navigate into project
+* `bundle install` to install ruby dependancies
+* `yarn install` to install node dependancies
+* `rake db:migrate` to run all db migrations (sqlite3)
+* `gem install foremen` ensure that you have foreman installed
+* `foreman start -f Procfile.dev` to start bundle server
+* open `localhost:3000` in your browser
 
-* Ruby version
+## Migrate Salesforce Data:
+* `config/initializers/salesforce.rb` ensure credentials (Host: test.salesforce.com // API Version; '41.0')
+* `rails salesforce:dealers:sync` to create and update accounts from Salesforce
+* `rails salesforce:dealers:delete` to delete local accounts with those from Salesforce with isDeleted=true
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## How to run the test suite:
+* `rspec spec` to run all tests

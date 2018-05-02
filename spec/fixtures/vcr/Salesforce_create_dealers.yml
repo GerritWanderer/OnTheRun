@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id=3MVG96mGXeuuwTZi1FvcrlwfqoSZ3iMmPlOKZ2g26iR0NL2DRqhDwj4GMWkl1jazNPUN0ax7_6Q7O1UKnT5TB&client_secret=8126221032253474441&username=info%40on-running.com.uat2&password=PpjR9mhmNTQjwLjUkvauhBYVcheLTuhNvGnLNc0ZzODSvRNXq
+    headers:
+      User-Agent:
+      - Faraday v0.15.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 02 May 2018 19:19:44 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Cache-Control:
+      - no-cache,must-revalidate,max-age=0,no-store,private
+      Set-Cookie:
+      - BrowserId=FUhO5ovsQfqGinoff65-eA;Path=/;Domain=.salesforce.com;Expires=Sun,
+        01-Jul-2018 19:19:44 GMT;Max-Age=5184000
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"00D5E0000004buq!AQgAQMakZaaaqDb4wAPEHcAiHeWw7y.kajvYOQYfB3TGtXDrh7LJRSVzbq_sewithdapgTEIv4nDudCDb0MzqHAATZC2g7UD","instance_url":"https://cs84.salesforce.com","id":"https://test.salesforce.com/id/00D5E0000004buqUAA/005D0000002BQ7NIAW","token_type":"Bearer","issued_at":"1525288784567","signature":"/QrkgBgH8vhNyJg/yU/Lhk6Tmv8imUF7loQxO8/cCDQ="}'
+    http_version: 
+  recorded_at: Wed, 02 May 2018 19:19:44 GMT
+- request:
+    method: get
+    uri: https://cs84.salesforce.com/services/data/v41.0/query?q=select%20Id,%20Name,%20POS_Street__c,%20POS_ZIP__c,%20POS_City__c,%20POS_Country__c,%20POS_State__c,%20POS_Phone__c,%20Dealer_Latitude__c,%20Dealer_Longitude__c%0A%20%20%20%20%20%20%20%20from%20Account%20where%20E_Shop_Dealer__c%20=%20%27Dealer%20and%20Point%20of%20Sale%27%20LIMIT%203
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.0
+      Authorization:
+      - OAuth 00D5E0000004buq!AQgAQMakZaaaqDb4wAPEHcAiHeWw7y.kajvYOQYfB3TGtXDrh7LJRSVzbq_sewithdapgTEIv4nDudCDb0MzqHAATZC2g7UD
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 02 May 2018 19:19:44 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      X-Robots-Tag:
+      - none
+      Cache-Control:
+      - no-cache,must-revalidate,max-age=0,no-store,private
+      Set-Cookie:
+      - BrowserId=9hM_T6HkTneS4Wso7Jo9pg;Path=/;Domain=.salesforce.com;Expires=Sun,
+        01-Jul-2018 19:19:44 GMT;Max-Age=5184000
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Sforce-Limit-Info:
+      - api-usage=40/5000000
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0b3RhbFNpemUiOjMsImRvbmUiOnRydWUsInJlY29yZHMiOlt7ImF0dHJpYnV0ZXMiOnsidHlwZSI6IkFjY291bnQiLCJ1cmwiOiIvc2VydmljZXMvZGF0YS92NDEuMC9zb2JqZWN0cy9BY2NvdW50LzAwMTU3MDAwMDFsbk4zWEFBVSJ9LCJJZCI6IjAwMTU3MDAwMDFsbk4zWEFBVSIsIk5hbWUiOiJJTlRFUlNQT1JUIFBST0ZJTUFSS1QgTWVyY2FkbyBFaW5rYXVmc3plbnRydW0iLCJQT1NfU3RyZWV0X19jIjoiw4R1w59lcmUgQmF5cmV1dGhlciBTdHJhc3NlIDgwIiwiUE9TX1pJUF9fYyI6IjkwNDkxIiwiUE9TX0NpdHlfX2MiOiJOw7xybmJlcmciLCJQT1NfQ291bnRyeV9fYyI6Ikdlcm1hbnkiLCJQT1NfU3RhdGVfX2MiOiJCYXllcm4iLCJQT1NfUGhvbmVfX2MiOiIrNDkgOTExIDU2OTI0MjkwIiwiRGVhbGVyX0xhdGl0dWRlX19jIjo0OS40NzA0MjUsIkRlYWxlcl9Mb25naXR1ZGVfX2MiOjExLjEwMTY2fSx7ImF0dHJpYnV0ZXMiOnsidHlwZSI6IkFjY291bnQiLCJ1cmwiOiIvc2VydmljZXMvZGF0YS92NDEuMC9zb2JqZWN0cy9BY2NvdW50LzAwMTU3MDAwMDFsblJLWkFBMiJ9LCJJZCI6IjAwMTU3MDAwMDFsblJLWkFBMiIsIk5hbWUiOiJTcG9ydHMmRW1vdGlvbnMgR21iSCAoRG9yZnN0ciA2NCkiLCJQT1NfU3RyZWV0X19jIjoiRG9yZnN0cmFzc2UgNjQiLCJQT1NfWklQX19jIjoiNjU2MSIsIlBPU19DaXR5X19jIjoiSXNjaGdsIiwiUE9TX0NvdW50cnlfX2MiOiJBdXN0cmlhIiwiUE9TX1N0YXRlX19jIjpudWxsLCJQT1NfUGhvbmVfX2MiOiIrNDMgNTQ0NCA1MTI5MiIsIkRlYWxlcl9MYXRpdHVkZV9fYyI6NDcuMDEwNzc2MywiRGVhbGVyX0xvbmdpdHVkZV9fYyI6MTAuMjkwNTEyOTAwMDAwMDd9LHsiYXR0cmlidXRlcyI6eyJ0eXBlIjoiQWNjb3VudCIsInVybCI6Ii9zZXJ2aWNlcy9kYXRhL3Y0MS4wL3NvYmplY3RzL0FjY291bnQvMDAxNTcwMDAwMWxuUnRwQUFFIn0sIklkIjoiMDAxNTcwMDAwMWxuUnRwQUFFIiwiTmFtZSI6IkludGVyc3BvcnQgS29obHNjaG1pZCBNw7xobGRvcmYiLCJQT1NfU3RyZWV0X19jIjoiU3RhZHRwbGF0eiA2NSIsIlBPU19aSVBfX2MiOiI4NDQ1MyIsIlBPU19DaXR5X19jIjoiTcO8aGxkb3JmIiwiUE9TX0NvdW50cnlfX2MiOiJHZXJtYW55IiwiUE9TX1N0YXRlX19jIjoiQlkiLCJQT1NfUGhvbmVfX2MiOiIrNDkgODYzMSA2MzQwIiwiRGVhbGVyX0xhdGl0dWRlX19jIjo0OC4yNDA3OSwiRGVhbGVyX0xvbmdpdHVkZV9fYyI6MTIuNTI1OTd9XX0=
+    http_version: 
+  recorded_at: Wed, 02 May 2018 19:19:44 GMT
+recorded_with: VCR 3.0.3

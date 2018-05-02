@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'dealers', to: 'dealers#index'
+  root 'dealers#index'
 end

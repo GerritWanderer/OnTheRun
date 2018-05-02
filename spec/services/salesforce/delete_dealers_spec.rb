@@ -6,7 +6,6 @@ RSpec.describe Salesforce::DeleteDealers, type: :model do
   it 'returns success when deleting dealers worked out' do
     VCR.use_cassette('Salesforce fetch deleted dealers') do
       result = subject.invoke
-      debugger
       expect(result).to be_success
     end
   end
