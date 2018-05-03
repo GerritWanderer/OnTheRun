@@ -16,7 +16,7 @@ export class DealersMap extends React.Component {
       lat: 50.23,
       lng: 7.59
     },
-    zoom: 6
+    zoom: 5
   };
 
   handleDealerClick = (key, props) => this.props.onDealerClick(props.dealerId)
