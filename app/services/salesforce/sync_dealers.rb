@@ -24,7 +24,7 @@ class Salesforce::SyncDealers
   def invoke
     begin
       dealers = client.query("select #{FIELDS.join(', ')}
-        from Account where E_Shop_Dealer__c = '#{Salesforce::DEALER_POS_TYPE}' LIMIT 3")
+        from Account where E_Shop_Dealer__c = '#{Salesforce::DEALER_POS_TYPE}'")
     rescue Exception => e
       return Services::Error.new(:salesforce_connection_error)
     end
