@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import DealersList from './List'
 import DealersMap from './Map'
+import DealersClusterMap from './ClusterMap'
 
 export class Dealers extends React.Component {
   static propTypes = {
@@ -27,7 +28,13 @@ export class Dealers extends React.Component {
     return (
       <div className='dealersContainer'>
         <div className='dealersMap'>
-          <DealersMap {...dealerProps} />
+          <DealersClusterMap
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_5kOuj--dAHdcjJv3GLPOqnhkGPzMuTM&v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            {...dealerProps}
+          />
         </div>
         <div className='dealersList'>
           <DealersList {...dealerProps} />
